@@ -6,7 +6,7 @@ def get_not_understand():
     :return: the string "Lo siento, no entiendo lo que dices"
     """
 
-    response = u'Lo siento pero no entendí lo que quieres preguntarme.'
+    response = u'Lo siento pero no entendí tu peticion.\nMe repites tu respuesta?'
 
     return response
 
