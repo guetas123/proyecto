@@ -55,12 +55,12 @@ def train_model(num):
 
     cm = metrics.confusion_matrix(test_targets, test_data_predicted)
     score = metrics.accuracy_score(test_targets, test_data_predicted)
-    """
+    
     #imprime matriz de confusion
     print()
     print(cm)
     print()
-    """
+    
 
     logger.debug("TRAIN SCORE: %s", score)
 
@@ -116,7 +116,7 @@ def load_model():
     trained_model = False
 
     if not trained_model:
-        model, count_vectorizer = train_model(1)
+        model, count_vectorizer = train_model(3)
 
     return [model, count_vectorizer]
 

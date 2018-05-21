@@ -1,4 +1,5 @@
 import string
+from reservation.add_reservation import *
 def get_response(l):
 	#Aqui reserva la fecha y pide el nombre
     """
@@ -15,7 +16,6 @@ def get_response(l):
     	if all(char in set(string.punctuation) for char in token):
     		continue
     	
-    	token= token.lower()
     	token = token.strip()
     	if token in stopwords:
     		continue
@@ -24,5 +24,7 @@ def get_response(l):
     temp = []
     temp.append(' '.join(clean_token))
     token1 = str(clean_token[0])+" de "+str(clean_token[1])
+
+    add_date(token1)
 
     return "Se asigno la fecha "+ token1 +". A que nombre desea la reservacion?"

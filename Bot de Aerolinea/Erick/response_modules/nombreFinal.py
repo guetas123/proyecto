@@ -1,4 +1,5 @@
 import string
+from reservation.add_reservation import *
 def get_response(l):
 	#Aqui reserva el nombre y se finaliza
     """
@@ -29,4 +30,9 @@ def get_response(l):
     for t in clean_token:
     	token1 =token1 + str(t) + " "
 
-    return "Reservacion a nombre de "+token1+"lista. Gracias."
+
+    add_name(token1)
+
+    reserv = return_reservation()
+
+    return reserv + "\n \nGracias por su reservacion.\nQue tenga un buen dia."

@@ -1,4 +1,5 @@
 import string
+from reservation.add_reservation import *
 def get_response(l):
 	#Aqui reserva el destino del vuelo y despues pregunta por la fecha
     """
@@ -16,7 +17,6 @@ def get_response(l):
     		continue
     	if token.isdigit():
     		continue
-    	token= token.lower()
     	token = token.strip()
     	if token in stopwords:
     		continue
@@ -25,5 +25,7 @@ def get_response(l):
     temp = []
     temp.append(' '.join(clean_token))
     token = clean_token[0]
+
+    add_place(token)
     
     return "En que fecha te gustaria volar a " + str(token) + "?"
